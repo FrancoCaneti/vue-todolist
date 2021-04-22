@@ -17,20 +17,19 @@
    
 
    <section class="new-todo">
-       <input type="text" placeholder="Inserisci un elemento"/>
-       <button>aggiungi</button>
+       <input type="text" 
+       placeholder="Inserisci un elemento"
+       v-model="newTodo"/>
+       <button @click="addTodo">aggiungi</button>
    </section>
 
    <section class="todos-container">
        <ul>
-           <li class="todo">
-               <span class="text">test</span>
+           <li class="todo" v-for='todo in todos'>
+               <span class="text">{{todo.text}}</span>
                <i class="fas fa-trash"></i>
            </li>
-           <li class="todo">
-            <span class="text">test</span>
-            <i class="fas fa-trash"></i>
-          </li>
+           
        </ul>
    </section>
    </div>
