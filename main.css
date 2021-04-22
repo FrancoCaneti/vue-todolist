@@ -11,7 +11,7 @@ body{
     
 }
 
-.container{
+.app{
     max-width: 300px;
     margin:0 auto;
     padding:20px;
@@ -60,4 +60,10 @@ h1{
 .todos li span.completed{
     text-decoration: line-through;
     color:white
+}
+
+button{
+    position: relative;
+    left: 300px;
+    bottom: 70px;
 }

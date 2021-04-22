@@ -4,17 +4,17 @@ const app = new Vue ({
         todos:[
             {
               text:'Fare la spesa',
-              completata:false,
+              completed:false,
             } ,
 
             {
               text:'Fare la spesa',
-              completata:false,
+              completed:false,
             } ,
 
             {
               text:'Fare la spesa',
-              completata:false,
+              completed:false,
              } ,
         ],
         newTodo:'',
@@ -22,6 +22,17 @@ const app = new Vue ({
     methods: {
         //inserire in nuovo todo nella lista
 
-        addTodo(): 
+        addTodo(){
+
+
+            if(this.newTodo !== ''){
+                this.todos.push({
+                    text:this.newTodo,
+                    completed:false
+                });
+                this.newTodo ='';
+                this.$refs.todoInput.focus();
+            }
+        }
     }
 });
