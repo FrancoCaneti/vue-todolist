@@ -19,18 +19,27 @@
    <section class="new-todo">
        <input type="text" 
        placeholder="Inserisci un elemento"
-       v-model="newTodo"/>
+       v-model.trim="newTodo"
+       @keyup.enter="addTodo"
+       ref="todoInput"/>
+
        <button @click="addTodo">aggiungi</button>
    </section>
 
    <section class="todos-container">
-       <ul>
-           <li class="todo" v-for='todo in todos'>
-               <span class="text">{{todo.text}}</span>
-               <i class="fas fa-trash"></i>
+       <ul v-if="todos.lengh > 0">
+           <li class="todo" v-for="(todo, index) in todos">
+
+               <span class="text"
+               :class="{completed: todo.completed}"
+               @click="updateStatus(index)"
+               > {{todo.text}}</span>
+
+               <i class="fas fa-trash"
+               @click="removeTodo(index)"></i>
            </li>
-           
-       </ul>
+       </ul> 
+       <h2 v-else>Nessun compito</h2>
    </section>
    </div>
         <!--Vue-->
