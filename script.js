@@ -8,16 +8,18 @@ const app = new Vue ({
             } ,
 
             {
-              text:'Fare la spesa',
+              text:'Pulire casa',
               completed:false,
             } ,
 
             {
-              text:'Fare la spesa',
+              text:'Portare fuori il cane',
               completed:false,
              } ,
         ],
         newTodo:'',
+        
+    
     },
     methods: {
         //inserire in nuovo todo nella lista

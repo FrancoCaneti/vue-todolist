@@ -10,38 +10,30 @@
     <title>Vue To Do List</title>
 </head>
 <body>
-    <div class="app">
-        
-  
-      <header>
-          <h1>My ToDo List</h1>
-      </header>
-      <main>
-          <input
-          type="text"
-          class="add-todo"
-          placeholder="Inserisci un elemento"
-          v-model.trim="newT0do"
-          @keyup.enter="addTodo"
-          ref="todoInput"/>
-          <button>Add</button>
-  
-          <ul  v-if="todos.lenght > 0" class="todos">
-             
-          
-          </ul>
-      </main>
-    </div>
-  
-    <!--templates-->
-    <div id="template" style="display:none">
-      <li>
-          <span class="text"></span> 
-          <i class="fas fa-trash-alt"></i>
-      </li>
-  </div>
+   <div id="app" class="container">
+       <header class="app-header">
 
+       </header>
+   
 
+   <section class="new-todo">
+       <input type="text" placeholder="Inserisci un elemento"/>
+       <button>aggiungi</button>
+   </section>
+
+   <section class="todos-container">
+       <ul>
+           <li class="todo">
+               <span class="text">test</span>
+               <i class="fas fa-trash"></i>
+           </li>
+           <li class="todo">
+            <span class="text">test</span>
+            <i class="fas fa-trash"></i>
+          </li>
+       </ul>
+   </section>
+   </div>
         <!--Vue-->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
         <!--JS-->
